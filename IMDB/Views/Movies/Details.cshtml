@@ -1,0 +1,88 @@
+﻿@model IMDB.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.MovieTitle)</h4>
+    <img src="@Html.DisplayFor(model => model.ImageURL)" height="340"  />
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Director          
+        </dt>
+
+        <dd>
+            <img src=" @Html.DisplayFor(model => model.Director.ImageURL)" height="165" />
+            @Html.DisplayFor(model => model.Director.DirectorName)
+
+        </dd>
+
+
+        <dt>
+           Company
+        </dt>
+
+        <dd>
+            <img src=" @Html.DisplayFor(model => model.Company.ImageURL)" height="165" />
+            @Html.DisplayFor(model => model.Company.CompanyName)
+
+        </dd>
+
+        <dt>
+            Cinema
+        </dt>
+
+        <dd>
+            <img src=" @Html.DisplayFor(model => model.Cinema.ImageURL)" height="165" />
+            @Html.DisplayFor(model => model.Cinema.CinemaName)
+
+        </dd>
+
+
+
+
+
+
+        <dt>
+            Runtime
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Runtime) min.
+        </dd>
+
+        <dt>
+          Genre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+           Budget
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Budget) mil.
+        </dd>
+
+        <dt>
+            Release date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

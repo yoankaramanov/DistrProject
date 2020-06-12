@@ -1,0 +1,53 @@
+﻿@model IMDB.Models.Cinema
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>            @Html.DisplayFor(model => model.CinemaName)</h4>
+    <img src="@Html.DisplayFor(model => model.ImageURL)" height="340" />
+    <hr />
+    <dl class="dl-horizontal">
+    
+
+        <dt>
+            Founding date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoundingDate)
+        </dd>
+
+        <dt>
+            Net worth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NetWorth) mil.
+        </dd>
+
+        <dt>
+           CEO
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CEO)
+        </dd>
+
+        <dt>
+          Rating 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating) / 10
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CinemaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

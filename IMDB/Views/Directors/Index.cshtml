@@ -1,0 +1,67 @@
+﻿@model IEnumerable<IMDB.Models.Director>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Directors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+           Name
+        </th>
+        
+        <th>
+            Date of birth
+        </th>
+        <th>
+           Net worth
+        </th>
+        <th>
+            Nationality
+        </th>
+        <th>
+            Education
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+     
+        <img src=" @Html.DisplayFor(modelItem => item.ImageURL)" height="165" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DirectorName)
+       
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.DateOfBirth)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NetWorth) mil.
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nationality)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Education)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.DirectorId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.DirectorId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.DirectorId })
+    </td>
+</tr>
+}
+
+</table>

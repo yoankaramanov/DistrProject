@@ -1,0 +1,51 @@
+﻿@model IMDB.Models.Actor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4> @Html.DisplayFor(model => model.ActorName)</h4>
+    <img src="@Html.DisplayFor(model => model.ImageURL)" height="340"  />
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Date of birth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+           Net worth
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NetWorth) mil.
+        </dd>
+
+        <dt>
+            Nationality
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+           Height (in cm.)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height) cm
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ActorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
